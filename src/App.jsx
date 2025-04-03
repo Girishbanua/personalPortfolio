@@ -64,9 +64,9 @@ const App = () => {
             className=" my-2 rounded-3xl h-[25rem] w-full object-cover md:h-[35rem] md:object-[10%_37%] "
           />
         </div>
-        <div className="md:text-center">
+        <div className="sm:text-center">
           <h1>
-            Hello there, <br className="md:hidden block" /> this is{" "}
+            Hello there, <br className="sm:hidden block" /> this is{" "}
             <span className="blueGradientText text-[5rem]/[0.8] md:font-medium">
               Girish
             </span>
@@ -89,27 +89,28 @@ const App = () => {
           </div>
         </div>
         {/* ------------------aboutme section-------------------- */}
-        <section className=" border-2 border-blue-600 md:border-0 md:p-2 rounded-3xl p-4 md:my-40 aboutMe my-20 md:flex justify-evenly gap-5  ">
-          <div className="bgImgProfile shrink hidden md:block ">
+        <section className=" border-2 border-blue-600 md:border-0 md:p-2 rounded-3xl p-4 md:my-40 
+        my-20 flex align-center justify-center gap-10 ">
+          <div className="bgImgProfile hidden md:block">
             <img
               src="new.jpg"
               alt="profile image"
               className="my-2 rounded-3xl h-[25rem] object-cover md:h-[35rem] md:object-[10%_37%] grayscale "
             />
           </div>
-          <div className=" flex flex-col ">
+          <div className=" flex flex-col sm:text-center md:text-left ">
             <h1>About me</h1>
             <p className="italic md:mt-20">
               Crafting web experiences with love
               <span className="not-italic redGradientText">❣️</span>
             </p>
-            <p className="max-w-[34rem] mt-5 md:text-justify">
+            <p className="md:max-w-[34rem] mt-5 md:text-justify sm:text-center">
               Passionate about web technologies, I enjoy turning ideas into
               functional and efficient applications. Currently exploring new
               tools and frameworks while sharing my knowledge in computer
               science.
             </p>
-            <div className="relative mt-11 mb-5 self-end md:self-start ">
+            <div className="relative mt-11 mb-5 self-end sm:self-center md:self-start ">
               <button className=" bg-darkBg text-gray-300">Know more...</button>
               <div className="borderButton"></div>
             </div>
@@ -119,7 +120,7 @@ const App = () => {
         <section className="technologies p-4">
           <div className="flex flex-col justify-center items-center">
             <h1 className="text-center">Technologies</h1>
-            <div className="techs my-10 grid grid-cols-2 gap-4 md:grid-cols-4 ">
+            <div className="techs my-10 grid grid-cols-2 gap-4 sm:grid-cols-4 ">
               <div>
                 <img src="/icons8-java (1).svg" alt="tech logo" />
                 <li>Java</li>
