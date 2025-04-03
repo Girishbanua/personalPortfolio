@@ -36,7 +36,7 @@ const App = () => {
               strokeLinejoin="round"
               d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
             />
-          </svg> : <img src="/public/close.png" alt="close" className="invert w-10 h-10" onClick={handleNav} /> }
+          </svg> : <img src="/close.png" alt="close" className="invert w-10 h-10" onClick={handleNav} /> }
         </div>
         {click && <div className=" absolute -right-5 top-0 p-9 bg-darkBg w-[75%] h-screen rounded-l-3xl backdrop-blur-xl ">
           <ul className="flex flex-col gap-10 my-16 text-xl ">
@@ -119,7 +119,7 @@ const App = () => {
         <section className="technologies p-4">
           <div className="flex flex-col justify-center items-center">
             <h1 className="text-center">Technologies</h1>
-            <div className="techs flex justify-center items-center my-10 gap-10 flex-wrap max-w-[45rem]">
+            <div className="techs my-10 grid grid-cols-2 gap-4 md:grid-cols-4 ">
               <div>
                 <img src="/icons8-java (1).svg" alt="tech logo" />
                 <li>Java</li>

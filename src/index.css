@@ -27,6 +27,14 @@
   .project{
     @apply md:w-[60vh] bg-gray-900 p-8 h-96 my-12 rounded-2xl text-gray-300 
   }
+  .techs > div{  
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    scale: 0.7;
+  }
 }
 @layer base {
   nav{
@@ -49,6 +57,3 @@
   }
 }
 
-.techs > div{  
-  text-align: center;
-}
