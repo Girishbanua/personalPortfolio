@@ -4,7 +4,7 @@ import About from './About';
 
 function App() {
   return (
-    <Router>
+    <Router basename='/personalPortfolio' >
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
