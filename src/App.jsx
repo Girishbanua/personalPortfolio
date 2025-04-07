@@ -4,9 +4,9 @@ import About from './About';
 
 function App() {
   return (
-    <Router basename='/personalPortfolio' >
+    <Router>
       <Routes>
-        <Route path="/personalPortfolio" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </Router>

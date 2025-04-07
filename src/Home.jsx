@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./index.css";
 import Typewriter from "typewriter-effect";
 import { useNavigate } from 'react-router-dom';
+import { AboutMeComp } from "./About";
 
 const Home = () => {
   const [click, setClick] = useState(false);
@@ -107,31 +108,13 @@ const Home = () => {
         {/* ------------------aboutme section-------------------- */}
         <section
           className=" border-2 border-blue-600 md:border-0 md:p-2 rounded-3xl p-4 md:my-40 
-        my-20 flex align-center justify-center gap-10 "
+        my-20 flex flex-col align-center justify-center gap-10 "
         >
-          <div className="bgImgProfile hidden md:block">
-            <img
-              src="new.jpg"
-              alt="profile image"
-              className="my-2 rounded-3xl h-[25rem] object-cover md:h-[35rem] md:object-[10%_37%] grayscale "
-            />
-          </div>
-          <div className=" flex flex-col sm:text-center md:text-left ">
-            <h1>About me</h1>
-            <p className="italic md:mt-20">
-              Crafting web experiences with love
-              <span className="not-italic redGradientText">❣️</span>
-            </p>
-            <p className="md:max-w-[34rem] mt-5 md:text-justify sm:text-center">
-              Hey, I’m Girish! I’m learning web development and love mixing tech
-              with creativity. I enjoy coding, designing, and bringing ideas to
-              life on the web.
-            </p>
-            <div className="relative mt-11 mb-5 self-end sm:self-center md:self-start ">
+          <AboutMeComp />
+          <div className="relative mt-11 mb-5 self-end sm:self-center md:self-start ">
               <button className=" bg-darkBg text-gray-300" onClick={() => navigate('/about')}>Know more...</button>
               <div className="borderButton"></div>
             </div>
-          </div>
         </section>
         {/* ------------------technologies section-------------------- */}
         <section className="technologies p-4">
