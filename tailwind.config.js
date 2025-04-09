@@ -23,7 +23,16 @@ export default {
       },
       backgroundImage:{
         "bgLight": "linear-gradient(to bottom right, #FFECD2 40%, #FCB69F 100%)",        
-      }
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
+      animation: {
+        marquee: 'marquee 15s linear infinite',
+      },
     },
   },
   plugins: [],  

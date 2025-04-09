@@ -25,15 +25,13 @@
     @apply p-3 rounded-full cursor-pointer blueGradientBg text-white w-[8rem] h-12 absolute top-0 -z-10 scale-x-[1.04] scale-y-110  ;
   } 
   .project{
-    @apply md:w-[60vh] bg-gray-900 p-8 h-96 my-12 rounded-2xl text-gray-300 
+    @apply md:w-[60vh] bg-gray-900 p-5 h-96 my-10 rounded-2xl text-gray-300 w-full
   }
   .techs > div{  
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    scale: 0.7;
+    @apply w-28 h-24 flex flex-col text-center justify-center items-center scale-75
+  }
+  .techs > div > img{
+    @apply object-contain
   }
 }
 @layer base {

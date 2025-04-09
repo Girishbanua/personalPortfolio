@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./index.css";
 import Typewriter from "typewriter-effect";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { AboutMeComp } from "./About";
 
 const Home = () => {
@@ -46,10 +46,11 @@ const Home = () => {
             </svg>
           ) : (
             <img
-              src="/close.png"
+              src="/close.webp"
               alt="close"
               className="invert w-10 h-10"
               onClick={handleNav}
+              loading="lazy"
             />
           )}
         </div>
@@ -76,8 +77,9 @@ const Home = () => {
       <main>
         <div className="bgImgProfile grayscale">
           <img
-            src="new.jpg"
+            src="new.webp"
             alt="profile image"
+            loading="lazy"
             className=" my-2 rounded-3xl h-[25rem] w-full object-cover md:h-[35rem] md:object-[10%_37%] "
           />
         </div>
@@ -112,51 +114,22 @@ const Home = () => {
         >
           <AboutMeComp />
           <div className="relative mt-11 mb-5 self-end sm:self-center md:self-start ">
-              <button className=" bg-darkBg text-gray-300" onClick={() => navigate('/about')}>Know more...</button>
-              <div className="borderButton"></div>
-            </div>
+            <button
+              className=" bg-darkBg text-gray-300"
+              onClick={() => navigate("/about")}
+            >
+              Know more...
+            </button>
+            <div className="borderButton"></div>
+          </div>
         </section>
         {/* ------------------technologies section-------------------- */}
         <section className="technologies p-4">
           <div className="flex flex-col justify-center items-center">
             <h1 className="text-center">Technologies</h1>
-            <div className="techs my-10 grid grid-cols-2 gap-4 sm:grid-cols-4 ">
-              <div>
-                <img src="/icons8-java (1).svg" alt="tech logo" />
-                <li>Java</li>
-              </div>
-              <div>
-                <img src="/icons8-react-native.svg" alt="tech logo" />
-                <li>React JS</li>
-              </div>
-              <div>
-                <img src="/icons8-javascript.svg" alt="tech logo" />
-                <li>Next JS</li>
-              </div>
-              <div>
-                <img src="/icons8-mongodb.svg" alt="tech logo" />
-                <li>MongoDB</li>
-              </div>
-              <div>
-                <img
-                  src="/icons8-postman-api.svg"
-                  alt="tech logo"
-                  className="saturate-100"
-                />
-                <li>Postman API</li>
-              </div>
-              <div>
-                <img src="/icons8-postgres.svg" alt="tech logo" />
-                <li>PostgreSQL</li>
-              </div>
-              <div>
-                <img src="/icons8-nodejs.svg" alt="tech logo" />
-                <li>Node JS</li>
-              </div>
-              <div>
-                <img src="/icons8-tailwind-css.svg" alt="tech logo" />
-                <li>Tailwind CSS</li>
-              </div>
+            <div className="flex gap-10 whitespace-nowrap overflow-hidden">
+              <TechnologiesComp />
+              <TechnologiesComp />
             </div>
           </div>
         </section>
@@ -164,59 +137,11 @@ const Home = () => {
         <section>
           <div>
             <h1>Projects</h1>
-            <div className="flex flex-wrap flex-col md:flex-row gap-5 ">
-              <div className="project">
-                <div className="h-[50%] bg-slate-800 rounded-2xl">
-                  <img src="" alt="" />
-                </div>
-                <div className="mt-4">
-                  <h2>Project Heading</h2>
-                  <span>HTML / CSS / JavaScript</span>
-                  <p>
-                    project description Lorem ipsum, dolor sit amet consectetur
-                    adipisicing elit. Fugit, ratione.
-                  </p>
-                </div>
-              </div>
-              <div className="project">
-                <div className="h-[50%] bg-slate-800 rounded-2xl">
-                  <img src="" alt="" />
-                </div>
-                <div className="mt-4">
-                  <h2>Project Heading</h2>
-                  <span>HTML / CSS / JavaScript</span>
-                  <p>
-                    project description Lorem ipsum, dolor sit amet consectetur
-                    adipisicing elit. Fugit, ratione.
-                  </p>
-                </div>
-              </div>
-              <div className="project">
-                <div className="h-[50%] bg-slate-800 rounded-2xl">
-                  <img src="" alt="" />
-                </div>
-                <div className="mt-4">
-                  <h2>Project Heading</h2>
-                  <span>HTML / CSS / JavaScript</span>
-                  <p>
-                    project description Lorem ipsum, dolor sit amet consectetur
-                    adipisicing elit. Fugit, ratione.
-                  </p>
-                </div>
-              </div>
-              <div className="project">
-                <div className="h-[50%] bg-slate-800 rounded-2xl">
-                  <img src="" alt="" />
-                </div>
-                <div className="mt-4">
-                  <h2>Project Heading</h2>
-                  <span>HTML / CSS / JavaScript</span>
-                  <p>
-                    project description Lorem ipsum, dolor sit amet consectetur
-                    adipisicing elit. Fugit, ratione.
-                  </p>
-                </div>
-              </div>
+            <div className="flex flex-wrap flex-col md:flex-row">
+              <ProjectComp />
+              <ProjectComp />
+              <ProjectComp />
+              <ProjectComp />
             </div>
           </div>
         </section>
@@ -224,5 +149,66 @@ const Home = () => {
     </div>
   );
 };
+
+export const TechnologiesComp = () => {
+  return (
+    <div className="techs my-10 flex gap-10 animate-marquee ">
+      <div>
+        <img loading="lazy" src="/icons8-java (1).svg" alt="tech logo" />
+        <li>Java</li>
+      </div>
+      <div>
+        <img loading="lazy" src="/icons8-react-native.svg" alt="tech logo" />
+        <li>React JS</li>
+      </div>
+      <div>
+        <img loading="lazy" src="/icons8-javascript.svg" alt="tech logo" />
+        <li>Next JS</li>
+      </div>
+      <div>
+        <img loading="lazy" src="/icons8-mongodb.svg" alt="tech logo" />
+        <li>MongoDB</li>
+      </div>
+      <div>
+        <img loading="lazy"
+          src="/icons8-postman-api.svg"
+          alt="tech logo"
+          className="saturate-100"
+        />
+        <li>Postman API</li>
+      </div>
+      <div>
+        <img loading="lazy" src="/icons8-postgres.svg" alt="tech logo" />
+        <li>PostgreSQL</li>
+      </div>
+      <div>
+        <img loading="lazy" src="/icons8-nodejs.svg" alt="tech logo" />
+        <li>Node JS</li>
+      </div>
+      <div>
+        <img loading="lazy" src="/icons8-tailwind-css.svg" alt="tech logo" />
+        <li>Tailwind CSS</li>
+      </div>
+    </div>
+  );
+};
+
+export function ProjectComp() {
+  return (
+    <div className="project">
+      <div className="h-1/2 bg-slate-800 rounded-2xl">
+        <img src="" alt="" />
+      </div>
+      <div className="mt-4 p-2 h-1/2 overflow-hidden">
+        <h2>Project Heading</h2>
+        <span>HTML / CSS / JavaScript</span>
+        <p className="overflow-hidden whitespace-nowrap text-ellipsis">
+          project description Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Fugit, ratione.
+        </p>
+      </div>
+    </div>
+  );
+}
 
 export default Home;

@@ -12,7 +12,7 @@ export const AboutMeComp = () => {
     <div className="overflow-hidden">
       <h1>About Me</h1>
       <div className="bg-blue-900/40 overflow-ellipsis rounded-xl flex flex-col-reverse sm:flex-col gap-5 md:flex-row">     
-        <p className=" overflow-ellipsis backdrop-blur-lg rounded-xl p-4 text-2xl font-light h-[25rem] sm:h-full ">
+        <p className="  backdrop-blur-lg rounded-xl p-4 text-2xl font-light h-[25rem] sm:h-full ">
           <b className="blueGradientText text-4xl">Hi, I’m Girish!</b> an
           aspiring software developer with a{" "}
           <b className="blueGradientText">deep interest in web development </b>
@@ -50,8 +50,9 @@ export const AboutMeComp = () => {
           digital experiences
         </p>
         <img
-          src="/selfie.jpg"
+          src="/selfie.webp"
           alt="profile image"
+          loading="lazy"
           className="grayscale sm:h-[34rem] w-[95rem] h-[25rem] rounded-xl object-cover "
         />
         
