@@ -21,7 +21,7 @@ const Home = () => {
           onClick={handleNav}
           className="text-2xl leading-6 cursor-pointer sm:3xl font-elegant font-semibold sm:z-10"
         >
-          Girish Ch. Banua <br />
+          Girish <span className="hidden sm:inline-block">Ch.</span> Banua <br />
           <span className="text-xl font-light tracking-widest">
             | Portfolio
           </span>
@@ -35,7 +35,7 @@ const Home = () => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-14 h-14 "
+              className="w-10 h-10 "
               onClick={handleNav}
             >
               <path
