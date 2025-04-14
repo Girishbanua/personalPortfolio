@@ -8,20 +8,20 @@ const Home = () => {
   const [click, setClick] = useState(false);
   const [change, setChange] = useState(true);
   const handleNav = () => {
-    console.log(click ? "block" : "hidden");
     setClick(!click);
     setChange(!change);
   };
   const navigate = useNavigate();
   return (
-    <div className="grayGradientText p-2 sm:p-4 Container w-[100vw] overflow-hidden">
+    <div className=" grayGradientText p-2 sm:p-4 Container w-[100vw] overflow-hidden">
       <div className="blurBG bg-blue-600 h-11 w-11 scale-[3] -z-10 rounded-full filter blur-xl brightness-150 absolute left-2 -top-4"></div>
       <nav>
         <h1
           onClick={handleNav}
-          className="text-2xl leading-6 cursor-pointer sm:3xl font-elegant font-semibold sm:z-10"
+          className="text-2xl drop-shadow-lg leading-6 cursor-pointer sm:3xl font-elegant font-semibold sm:z-10"
         >
-          Girish <span className="hidden sm:inline-block">Ch.</span> Banua <br />
+          Girish <span className="hidden sm:inline-block">Ch.</span> Banua{" "}
+          <br />
           <span className="text-xl font-light tracking-widest">
             | Portfolio
           </span>
@@ -109,18 +109,20 @@ const Home = () => {
         </div>
         {/* ------------------aboutme section-------------------- */}
         <section
-          className=" border-2 border-blue-600 md:border-0 md:p-2 rounded-3xl p-4 md:my-40 
-        my-20 flex flex-col align-center justify-center gap-10 "
+          className="relative border-2 border-blue-600 md:border-0 md:p-2 rounded-3xl p-4 md:my-40 
+        my-20 flex flex-col items-center justify-center gap-10 "
         >
-          <AboutMeComp />
-          <div className="relative mt-11 mb-5 self-end sm:self-center md:self-start ">
-            <button
-              className=" bg-darkBg text-gray-300"
-              onClick={() => navigate("/about")}
-            >
-              Know more...
-            </button>
-            <div className="borderButton"></div>
+          <AboutMeComp height="false" />
+          <div className="absolute bottom-0 bg-blue-900/20 w-full h-[25vh] backdrop-blur-sm rounded-2xl flex justify-center items-end">
+            <div className="mt-11 mb-5 scale-110 ">
+              <button
+                className=" bg-darkBg text-gray-300"
+                onClick={() => navigate("/about")}
+              >
+                Know more...
+              </button>
+              <div className="borderButton"></div>
+            </div>
           </div>
         </section>
         {/* ------------------technologies section-------------------- */}
@@ -137,7 +139,7 @@ const Home = () => {
         <section>
           <div>
             <h1>Projects</h1>
-            <div className="flex flex-wrap flex-col md:flex-row">
+            <div className="flex flex-wrap flex-col md:flex-row sm:gap-10 gap-3">
               <ProjectComp />
               <ProjectComp />
               <ProjectComp />
@@ -170,7 +172,8 @@ export const TechnologiesComp = () => {
         <li>MongoDB</li>
       </div>
       <div>
-        <img loading="lazy"
+        <img
+          loading="lazy"
           src="/icons8-postman-api.svg"
           alt="tech logo"
           className="saturate-100"
