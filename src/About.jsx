@@ -15,7 +15,7 @@ export const AboutMeComp = ({ height }) => {
   <div className="bg-blue-900/40 overflow-hidden rounded-xl flex flex-col-reverse sm:flex-col md:flex-row gap-5">
     
     {/* TEXT SECTION */}
-    <div className={`flex-1 p-6 backdrop-blur-lg rounded-xl text-2xl font-light ${height ? "max-h-[24rem] overflow-hidden" : "h-fit"} text-wrap `}>
+    <div className={`flex-1 p-6 backdrop-blur-lg rounded-xl text-2xl font-light ${height ? "max-h-[30rem] overflow-hidden" : "h-fit"} text-wrap `}>
       <b className="blueGradientText text-4xl">Hi, I’m Girish!</b> an
       aspiring software developer with a{" "}
       <b className="blueGradientText">deep interest in web development</b> and its related technologies.
@@ -36,12 +36,12 @@ export const AboutMeComp = ({ height }) => {
     </div>
 
     {/* IMAGE SECTION */}
-    <div className="flex-shrink-2 md:w-1/3 w-full sm:max-h-[24rem] md:h-full ">
+    <div className="flex-shrink-2 md:w-1/3 w-full sm:max-h-[30rem] md:h-full ">
       <img
         src="/selfie.webp"
         alt="profile image"
         loading="lazy"
-        className={`grayscale rounded-xl w-full object-cover sm:object-[25%_37%] ${height ? "sm:max-h-[24rem]" : "h-full"} `}
+        className={`grayscale rounded-xl w-full object-cover sm:object-[25%_37%] ${height ? "sm:max-h-[30rem]" : "h-full"} `}
       />
     </div>
   </div>

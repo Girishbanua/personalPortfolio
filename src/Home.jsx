@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <div className=" grayGradientText p-2 sm:p-4 Container w-[100vw] overflow-hidden">
       <div className="blurBG bg-blue-600 h-11 w-11 scale-[3] -z-10 rounded-full filter blur-xl brightness-150 absolute left-2 -top-4"></div>
-      <nav>
+      <nav className="fixed top-0 left-0 right-0 sm:px-16 ">
         <h1
           onClick={handleNav}
           className="text-2xl drop-shadow-lg leading-6 cursor-pointer sm:3xl font-elegant font-semibold sm:z-10"
@@ -58,6 +58,7 @@ const Home = () => {
           <div className=" absolute -right-5 top-0 p-9 bg-darkBg w-[75%] h-screen rounded-l-3xl backdrop-blur-xl ">
             <ul className="flex flex-col gap-10 my-16 text-xl ">
               <li>Home</li>
+              <li onClick={() => navigate("/about")}>About</li>
               <li>Projects</li>
               <li>Resume</li>
               <li>Contact</li>
@@ -68,6 +69,7 @@ const Home = () => {
         <div className="sm:block hidden">
           <ul className="flex gap-4">
             <li>Home</li>
+            <li>About</li>
             <li>Projects</li>
             <li>Resume</li>
             <li>Contact</li>
