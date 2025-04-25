@@ -3,8 +3,14 @@ const About = () => {
   return (
     <div className="p-4">
       <AboutMeComp />
-      <h2>Education</h2>
-      <h2>Hobbies</h2>
+      <h1>Education</h1>
+      <h3>Post Graduate</h3>
+      <p> <b>Masters of Computer Application (MCA)</b> - [ 2022-24 ]
+       <br /><i>Orissa University of Agriculture and Technology (OUAT), Bhubaneswar</i></p>
+      <h3>Graduation</h3>
+      <p><b>B.Sc Computer Science</b> - (2019-22) <br /> <i>Pragati Degree College, Bhawanipatna </i> </p>
+      <h1>Hobbies</h1>
+      <p>Drawing Doodles, playing chess, interest in playing piano</p>
     </div>
   );
 };

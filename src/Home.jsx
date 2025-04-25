@@ -69,20 +69,20 @@ const Home = () => {
         <div className="sm:block hidden">
           <ul className="flex gap-4">
             <li>Home</li>
-            <li>About</li>
+            <li onClick={() => navigate("/about")}>About</li>
             <li>Projects</li>
             <li>Resume</li>
             <li>Contact</li>
           </ul>
         </div>
       </nav>
-      <main>
+      <main className="mt-20">
         <div className="bgImgProfile grayscale">
           <img
             src="new.webp"
             alt="profile image"
             loading="lazy"
-            className=" my-2 rounded-3xl h-[25rem] w-full object-cover md:h-[35rem] md:object-[10%_37%] "
+            className=" my-2 rounded-3xl h-[25rem] w-full object-cover md:h-[32rem] md:object-[10%_37%] "
           />
         </div>
         <div className="sm:text-center">
