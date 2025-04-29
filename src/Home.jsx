@@ -5,77 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { AboutMeComp } from "./About";
 
 const Home = () => {
-  const [click, setClick] = useState(false);
-  const [change, setChange] = useState(true);
-  const handleNav = () => {
-    setClick(!click);
-    setChange(!change);
-  };
   const navigate = useNavigate();
   return (
     <div className=" grayGradientText p-2 sm:p-4 Container w-[100vw] overflow-hidden">
       <div className="blurBG bg-blue-600 h-11 w-11 scale-[3] -z-10 rounded-full filter blur-xl brightness-150 absolute left-2 -top-4"></div>
-      <nav className="fixed top-0 left-0 right-0 sm:px-16 ">
-        <h1
-          onClick={handleNav}
-          className="text-2xl drop-shadow-lg leading-6 cursor-pointer sm:3xl font-elegant font-semibold sm:z-10"
-        >
-          Girish <span className="hidden sm:inline-block">Ch.</span> Banua{" "}
-          <br />
-          <span className="text-xl font-light tracking-widest">
-            | Portfolio
-          </span>
-        </h1>
-        {/* Mobile View */}
-        <div className="sm:hidden block z-10">
-          {change ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-10 h-10 "
-              onClick={handleNav}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              />
-            </svg>
-          ) : (
-            <img
-              src="/close.webp"
-              alt="close"
-              className="invert w-10 h-10"
-              onClick={handleNav}
-              loading="lazy"
-            />
-          )}
-        </div>
-        {click && (
-          <div className=" absolute -right-5 top-0 p-9 bg-darkBg w-[75%] h-screen rounded-l-3xl backdrop-blur-xl ">
-            <ul className="flex flex-col gap-10 my-16 text-xl ">
-              <li>Home</li>
-              <li onClick={() => navigate("/about")}>About</li>
-              <li>Projects</li>
-              <li>Resume</li>
-              <li>Contact</li>
-            </ul>
-          </div>
-        )}
-        {/* Desktop View */}
-        <div className="sm:block hidden">
-          <ul className="flex gap-4">
-            <li>Home</li>
-            <li onClick={() => navigate("/about")}>About</li>
-            <li>Projects</li>
-            <li>Resume</li>
-            <li>Contact</li>
-          </ul>
-        </div>
-      </nav>
+      <NavbarComp />
       <main className="mt-20">
         <div className="bgImgProfile grayscale">
           <img
@@ -197,10 +131,89 @@ export const TechnologiesComp = () => {
     </div>
   );
 };
-
+export const NavbarComp = () => {
+  const [click, setClick] = useState(false);
+  const [change, setChange] = useState(true);
+  
+  const handleNav = () => {
+    setClick(!click);
+    setChange(!change);    
+  };
+  const navigate = useNavigate();
+  return (
+    <nav className="fixed top-0 left-0 right-0 sm:px-16 ">
+      <h1
+        onClick={() => navigate("/")}
+        className="text-2xl drop-shadow-lg leading-6 cursor-pointer sm:3xl font-elegant font-semibold sm:z-10"
+      >
+        Girish <span className="hidden sm:inline-block">Ch.</span> Banua <br />
+        <span className="text-xl font-light tracking-widest">| Portfolio</span>
+      </h1>
+      {/* Mobile View */}
+      <div className="sm:hidden block z-10">
+        {change ? (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-10 h-10 "
+            onClick={handleNav}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        ) : (
+          <img
+            src="/close.webp"
+            alt="close"
+            className="invert w-10 h-10"
+            onClick={handleNav}
+            loading="lazy"
+          />
+        )}
+      </div>
+      {click && (
+        <div className=" absolute -right-5 top-0 p-9 bg-darkBg w-[75%] h-screen rounded-l-3xl backdrop-blur-xl ">
+          <ul className="flex flex-col gap-10 my-16 text-xl ">
+            <NavListComp />
+          </ul>
+        </div>
+      )}
+      {/* Desktop View */}
+      <div className="sm:block hidden">
+        <ul className="flex gap-4">
+          <NavListComp />
+        </ul>
+      </div>
+    </nav>
+  );
+};
+export const NavListComp = () => {
+  const navigate = useNavigate();
+  const [visible, setVisible] = useState(true);
+  const handleVisible = () => {
+    setVisible(false);
+    navigate("/about");
+  };
+  
+  return (
+    <>
+      <li onClick={() => navigate("/")}>Home</li>
+      { visible && <li onClick={handleVisible}>About</li>}
+      <li><a href="#projects">Projects</a></li>
+      <li>Resume</li>
+      <li>Contact</li>
+    </>
+  );
+};
 export function ProjectComp() {
   return (
-    <div className="project">
+    <div className="project" id="projects">
       <div className="h-1/2 bg-slate-800 rounded-2xl">
         <img src="" alt="" />
       </div>

@@ -1,7 +1,10 @@
+import { NavbarComp } from "./Home";
+
 /* eslint-disable react/prop-types */
 const About = () => {
   return (
-    <div className="p-4">
+    <div className="p-4 mt-20">
+      <NavbarComp />
       <AboutMeComp />
       <h1>Education</h1>
       <h3>Post Graduate</h3>
@@ -16,7 +19,7 @@ const About = () => {
 };
 export const AboutMeComp = ({ height }) => {
   return (
-    <div className="overflow-hidden relative">
+    <div className={`overflow-hidden relative ${height}? "mt-20" : "mt-0"`}>
   <h1>About Me</h1>
   <div className="bg-blue-900/40 overflow-hidden rounded-xl flex flex-col-reverse sm:flex-col md:flex-row gap-5">
     
