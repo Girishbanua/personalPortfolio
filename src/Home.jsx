@@ -3,6 +3,7 @@ import "./index.css";
 import Typewriter from "typewriter-effect";
 import { useNavigate } from "react-router-dom";
 import { AboutMeComp } from "./About";
+import { motion } from "motion/react";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -11,15 +12,24 @@ const Home = () => {
       <div className="blurBG bg-blue-600 h-11 w-11 scale-[3] -z-10 rounded-full filter blur-xl brightness-150 absolute left-2 -top-4"></div>
       <NavbarComp />
       <main className="mt-20">
-        <div className="bgImgProfile grayscale">
+        <motion.div
+          className="grayscale mask-t-from-50 "
+          initial={{ y: -30, opacity: 0 }}
+          animate={{
+            y: 0, opacity: 1, repeat: 1
+          }}
+          transition={{
+            duration: 1.5,
+          }}
+        >
           <img
             src="new.webp"
             alt="profile image"
             loading="lazy"
-            className=" my-2 rounded-3xl h-[25rem] w-full object-cover md:h-[32rem] md:object-[10%_37%] "
+            className=" my-2 rounded-3xl h-[25rem] w-full object-cover md:h-[30rem] md:object-[10%_37%] "
           />
-        </div>
-        <div className="sm:text-center">
+        </motion.div>
+        <div className="sm:text-center ">
           <h1>
             Hello there, <br className="sm:hidden block" /> this is{" "}
             <span className="blueGradientText text-[5rem]/[0.8] md:font-medium">
@@ -68,10 +78,13 @@ const Home = () => {
             <div className="flex gap-10 whitespace-nowrap overflow-hidden">
               <TechnologiesComp />
               <TechnologiesComp />
+              <TechnologiesComp />
             </div>
           </div>
         </section>
+
         {/* ------------------projects section-------------------- */}
+
         <section>
           <div>
             <h1>Projects</h1>
@@ -88,9 +101,14 @@ const Home = () => {
   );
 };
 
-export const TechnologiesComp = () => {
+export const TechnologiesComp = ({delay=0}) => {
   return (
-    <div className="techs my-10 flex gap-10 animate-marquee ">
+    <motion.div
+      initial={{ x: 100 }}
+      animate={{ x: -900 }}
+      transition={{ repeat: Infinity, duration: 30, delay:`${delay}` }}
+      className="techs my-10 flex gap-10 "
+    >
       <div>
         <img loading="lazy" src="/icons8-java (1).svg" alt="tech logo" />
         <li>Java</li>
@@ -128,20 +146,24 @@ export const TechnologiesComp = () => {
         <img loading="lazy" src="/icons8-tailwind-css.svg" alt="tech logo" />
         <li>Tailwind CSS</li>
       </div>
-    </div>
+    </motion.div>    
   );
 };
 export const NavbarComp = () => {
   const [click, setClick] = useState(false);
   const [change, setChange] = useState(true);
-  
+
   const handleNav = () => {
     setClick(!click);
-    setChange(!change);    
+    setChange(!change);
   };
   const navigate = useNavigate();
   return (
-    <nav className="fixed top-0 left-0 right-0 sm:px-16 ">
+    <motion.nav
+      className="fixed top-0 left-0 right-0 sm:px-16 "
+      initial={{ y: -40 }}
+      animate={{ y: 0, transition: { duration: 2 } }}
+    >
       <h1
         onClick={() => navigate("/")}
         className="text-2xl drop-shadow-lg leading-6 cursor-pointer sm:3xl font-elegant font-semibold sm:z-10"
@@ -190,22 +212,24 @@ export const NavbarComp = () => {
           <NavListComp />
         </ul>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 export const NavListComp = () => {
-  const navigate = useNavigate();
   const [visible, setVisible] = useState(true);
-  const handleVisible = () => {
-    setVisible(false);
+  const navigate = useNavigate();
+  function handleVisible() {
+    setVisible(!visible);
     navigate("/about");
-  };
-  
+  }
+
   return (
     <>
       <li onClick={() => navigate("/")}>Home</li>
-      { visible && <li onClick={handleVisible}>About</li>}
-      <li><a href="#projects">Projects</a></li>
+      {visible && <li onClick={handleVisible}>About</li>}
+      <li>
+        <a href="#projects">Projects</a>
+      </li>
       <li>Resume</li>
       <li>Contact</li>
     </>

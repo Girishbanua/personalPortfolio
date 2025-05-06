@@ -23,7 +23,7 @@
   }
   .borderButton {
     @apply p-3 rounded-full cursor-pointer blueGradientBg text-white w-[8rem] h-12 absolute top-0 -z-10 scale-x-[1.04] scale-y-110  ;
-  } 
+  }   
   .project{
     @apply md:w-[60vh] bg-gray-900 p-5 h-96 my-10 rounded-2xl text-gray-300 w-full
   }
@@ -57,4 +57,11 @@
     @apply hover:scale-[0.98] p-3 rounded-full cursor-pointer text-white w-[8rem] h-12 ;
   }
 }
-
+.mask-t-from-50 {
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 50%);
+  mask-image: linear-gradient(to top, transparent 0%, black 50%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
